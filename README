@@ -1,6 +1,0 @@
-== Introduction ==
-
-This project is an implementation of a high-performance Sync/Async queue using Redis database and JSON marshalling protocol
-
-Ahmed Soliman
-www.ahmedsoliman.com
