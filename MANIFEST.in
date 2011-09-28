@@ -1,0 +1,5 @@
+include README
+include LICENSE
+include distribute_setup.py
+include setup.py
+prune *.pyc

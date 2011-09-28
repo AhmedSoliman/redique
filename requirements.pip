@@ -1,0 +1,10 @@
+mako >= 0.3.6
+mongoengine == 0.5
+Routes >= 1.12.3
+simplejson >= 2.1.2
+celery >= 2.3.3
+WebOb >= 1.0.8
+Beaker >= 1.5.4
+python-memcached >= 1.47
+httplib2
+psutil >= 0.3.0

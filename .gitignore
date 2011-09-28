@@ -1,0 +1,6 @@
+*.class
+*.orig
+*.pyc
+*.pyo
+*.rej
+.hg
