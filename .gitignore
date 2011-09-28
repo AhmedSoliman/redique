@@ -4,3 +4,7 @@
 *.pyo
 *.rej
 .hg
+dist
+redique.egg-info
+distribute-0.6.19.tar.gz
+distribute-0.6.19-py2.7.egg

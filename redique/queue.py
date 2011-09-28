@@ -163,6 +163,7 @@ class RediQue(object):
         task_key = "%s:%s" % (self._queue, task_id)
         self._redis.hset(task_key, "state", TASK_DONE)
         self._redis.hset(task_key, "timestamp", time.time())
+        return task_id
     
     def consume_loop(self, backend):
         '''
