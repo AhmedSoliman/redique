@@ -23,8 +23,7 @@ class TestBasics(unittest.TestCase):
         self.client.flush()
         
     def tearDown(self):
-        pass
-#        self.client.flush()
+        self.client.flush()
     
     def testBasicScenario(self):
         backend = SampleBackend()
@@ -85,10 +84,19 @@ class TestBasics(unittest.TestCase):
         self.assertEquals(0, len(self.client))
         threading.Thread(target=self.client.consume_one, args=[backend]).start()
         try:
-            result = self.client.execute_task(backend.fail)
+            _ = self.client.execute_task(backend.fail)
         except Exception, e:
             self.assertEquals("Beep, I just failed!", str(e))
         else:
             self.fail("Exception was not thrown")
-        
-        
+    
+    def testFlush(self):
+        backend = SampleBackend()
+        self.assertEquals(0, len(self.client))
+        self.client.push_task(backend.add, 1, 2)
+        self.client.push_task(backend.add, 2, 4)
+        self.client.push_task(backend.add, 5, 2)
+        self.assertEquals(3, len(self.client))
+        self.assertEquals(4, len(self.client._redis.keys('redique:redique_test*')))
+        self.client.flush()
+        self.assertEquals(0, len(self.client._redis.keys('redique:redique_test*')))

@@ -1,5 +1,6 @@
 include README
 include LICENSE
 include distribute_setup.py
+include requirements.pip
 include setup.py
 prune *.pyc
