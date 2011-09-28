@@ -42,4 +42,4 @@ Another way to do that is to call execute_task that blocks till the result is re
 	queue = redique.RediQue("calculator")
 	print queue.execute_task("add", 1, 2)
  
-[Ahmed Soliman][]
+[Ahmed Soliman](http://www.ahmedsoliman.com)
