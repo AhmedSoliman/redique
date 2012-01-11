@@ -25,7 +25,7 @@ class RediQue(object):
         Initialize new RediQue instance, 
         you can specify the host, port, db as a normal redis.Redis() instance
         '''
-        self._redis = redis.Redis(*kwargs)
+        self._redis = redis.Redis(**kwargs)
         self._queue = "%s:%s" % (prefix, queue)
         self._serializer = serializer
         self._timeout = timeout
